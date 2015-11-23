@@ -1,0 +1,320 @@
+
+		******** 3.1 ********
+#1 GET /person Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ {
+  "idPerson" : 2,
+  "firstname" : "hjjhsadhjadja_XML",
+  "lastname" : "Franco",
+  "birthdate" : "1978-09-01T01:00:00+02:00",
+  "email" : "chuck.norris@gmail.com",
+  "username" : "chuck.norris",
+  "lifeStatus" : [ {
+    "idMeasure" : 1,
+    "value" : "72",
+    "measureType" : {
+      "idMeasureDef" : 1,
+      "name" : "weight"
+    }
+  }, {
+    "idMeasure" : 4652,
+    "value" : "72",
+    "measureType" : {
+      "idMeasureDef" : 3,
+      "name" : "steps"
+    }
+  } ]
+}, {
+  "idPerson" : 3,
+  "firstname" : "Padsfsppo",
+  "lastname" : "Pipsdfspo",
+  "birthdate" : null,
+  "email" : null,
+  "username" : null,
+  "lifeStatus" : [ {
+    "idMeasure" : 6,
+    "value" : "23",
+    "measureType" : {
+      "idMeasureDef" : 6,
+      "name" : "bmi"
+    }
+  } ]
+}, {
+  "idPerson" : 5056,
+  "firstname" : "MARAMAllOllllll",
+  "lastname" : "TuputHebggggggre",
+  "birthdate" : "1978-09-01T01:00:00+02:00",
+  "email" : "chuck.norris@gmail.com",
+  "username" : "chuck.norris",
+  "lifeStatus" : [ {
+    "idMeasure" : 2,
+    "value" : "5",
+    "measureType" : {
+      "idMeasureDef" : 2,
+      "name" : "height"
+    }
+  }, {
+    "idMeasure" : 3,
+    "value" : "900",
+    "measureType" : {
+      "idMeasureDef" : 3,
+      "name" : "steps"
+    }
+  } ]
+}, {
+  "idPerson" : 6955,
+  "firstname" : "Padsfsppo",
+  "lastname" : "Pipsdfspo",
+  "birthdate" : null,
+  "email" : null,
+  "username" : null,
+  "lifeStatus" : [ ]
+} ]
+		******** 3.2 ********
+#2 GET /person/2 Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+{
+  "idPerson" : 2,
+  "firstname" : "hjjhsadhjadja_XML",
+  "lastname" : "Franco",
+  "birthdate" : "1978-09-01T01:00:00+02:00",
+  "email" : "chuck.norris@gmail.com",
+  "username" : "chuck.norris",
+  "lifeStatus" : [ {
+    "idMeasure" : 1,
+    "value" : "72",
+    "measureType" : {
+      "idMeasureDef" : 1,
+      "name" : "weight"
+    }
+  }, {
+    "idMeasure" : 4652,
+    "value" : "72",
+    "measureType" : {
+      "idMeasureDef" : 3,
+      "name" : "steps"
+    }
+  } ]
+}
+		******** 3.3 ********
+#3 PUT /person/2 Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 201
+{
+  "idPerson" : 2,
+  "firstname" : "hjjhsadhjadja_XML",
+  "lastname" : "Franco",
+  "birthdate" : "1978-09-01T01:00:00+02:00",
+  "email" : "chuck.norris@gmail.com",
+  "username" : "chuck.norris",
+  "lifeStatus" : [ {
+    "idMeasure" : 1,
+    "value" : "72",
+    "measureType" : {
+      "idMeasureDef" : 1,
+      "name" : "weight"
+    }
+  }, {
+    "idMeasure" : 4652,
+    "value" : "72",
+    "measureType" : {
+      "idMeasureDef" : 3,
+      "name" : "steps"
+    }
+  } ]
+}{
+  "idPerson" : 2,
+  "firstname" : "Chuck_JSON",
+  "lastname" : "Norris",
+  "birthdate" : "1945-01-01",
+  "email" : "chuck.norris@gmail.com",
+  "username" : "chuck.norris",
+  "lifeStatus" : [ {
+    "idMeasure" : 1,
+    "value" : "72",
+    "measureType" : {
+      "idMeasureDef" : 1,
+      "name" : "weight"
+    }
+  }, {
+    "idMeasure" : 4652,
+    "value" : "72",
+    "measureType" : {
+      "idMeasureDef" : 3,
+      "name" : "steps"
+    }
+  } ]
+}
+		******** 3.4 ********
+#4 POST /person Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+{
+  "idPerson" : 7058,
+  "firstname" : "Chuck",
+  "lastname" : "Norris",
+  "birthdate" : "1945-01-01",
+  "email" : null,
+  "username" : null,
+  "lifeStatus" : [ {
+    "idMeasure" : 4706,
+    "value" : "78.9",
+    "measureType" : {
+      "idMeasureDef" : 1,
+      "name" : "weight"
+    }
+  }, {
+    "idMeasure" : 4707,
+    "value" : "172",
+    "measureType" : {
+      "idMeasureDef" : 2,
+      "name" : "height"
+    }
+  } ]
+}
+		******** 3.5 ********
+#5 DELETE /person/7058 Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 204
+
+#2 GET /person/7058 Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 404
+
+		******** 3.6 ********
+#9 GET /measureTypes Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: ERROR
+=>HTTP Status: 200
+{
+  "measureType" : [ "weight", "height", "steps", "blood pressure", "heart rate", "bmi" ]
+}
+		******** 3.7 ********
+#6 GET /person/2/weight Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ {
+  "mid" : 3161,
+  "created" : "2011-12-09",
+  "value" : "90"
+}, {
+  "mid" : 3162,
+  "created" : "2011-12-09",
+  "value" : "90"
+}, {
+  "mid" : 3258,
+  "created" : "2011-12-09",
+  "value" : "90"
+}, {
+  "mid" : 3259,
+  "created" : "2011-12-09",
+  "value" : "90"
+} ]
+#6 GET /person/2/height Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/2/steps Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ {
+  "mid" : 3208,
+  "created" : "2011-12-09",
+  "value" : "100"
+}, {
+  "mid" : 3260,
+  "created" : "2011-12-09",
+  "value" : "94555"
+} ]
+#6 GET /person/2/blood pressure Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/2/heart rate Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/2/bmi Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/6955/weight Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/6955/height Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/6955/steps Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/6955/blood pressure Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/6955/heart rate Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+#6 GET /person/6955/bmi Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ ]
+		******** 3.8 ********
+#7 GET /person/2/steps/3208 Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ {
+  "mid" : 3208,
+  "created" : "2011-12-09",
+  "value" : "100"
+} ]
+		******** 3.9 ********
+#6 GET /person/2/steps Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ {
+  "mid" : 3208,
+  "created" : "2011-12-09",
+  "value" : "100"
+}, {
+  "mid" : 3260,
+  "created" : "2011-12-09",
+  "value" : "94555"
+} ]
+#8 POST /person/2/steps Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: ERROR
+=>HTTP Status: 200
+{
+  "mid" : 3261,
+  "created" : "2011-12-09",
+  "value" : "72"
+}
+#6 GET /person/2/steps Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 200
+[ {
+  "mid" : 3208,
+  "created" : "2011-12-09",
+  "value" : "100"
+}, {
+  "mid" : 3260,
+  "created" : "2011-12-09",
+  "value" : "94555"
+}, {
+  "mid" : 3261,
+  "created" : "2011-12-09",
+  "value" : "72"
+} ]
+		******** 3.10 ********
+#10 PUT /person/2/steps/3208 Accept: APPLICATION/JSON Content-Type: APPLICATION/JSON
+=>Result: OK
+=>HTTP Status: 201
+[ {
+  "mid" : 3208,
+  "created" : "2011-12-09",
+  "value" : "80"
+} ]
