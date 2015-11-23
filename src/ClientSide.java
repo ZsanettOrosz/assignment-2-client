@@ -793,7 +793,7 @@ public class ClientSide {
 
 			if (response.getStatus() == 200) {
 				x.loadXML(result);
-				System.out.println(result);
+				//System.out.println(result);
 				NodeList nodes = x
 						.getNodeListResult("healthMeasureHistories/measure/mid");
 				if (nodes.getLength() != 0) {
@@ -831,7 +831,7 @@ public class ClientSide {
 
 		String req = "#6 GET /person/{id}/{measureType} Accept: APPLICATION/XML Content-Type: APPLICATION/XML";
 		if (count == 0) {
-			messageHeader(req, 404, "ERROR");
+			System.out.println(messageHeader(req, 404, "ERROR"));
 		} else {
 
 			for (int i = 0; i < measure_types.size(); i++) {
@@ -848,7 +848,7 @@ public class ClientSide {
 
 				String result = response.readEntity(String.class);
 				if (response.getStatus() == 200) {
-					messageHeader(requ, response.getStatus(), "OK");
+					System.out.println(messageHeader(requ, response.getStatus(), "OK"));
 					System.out.println(prettyFormat(result));
 					this.writerXml.write(messageHeader(requ, 200, "OK"));
 					this.writerXml.write(prettyFormat(result));
@@ -874,13 +874,13 @@ public class ClientSide {
 
 				String result = response.readEntity(String.class);
 				if (response.getStatus() == 200) {
-					messageHeader(requ, response.getStatus(), "OK");
+					System.out.println(messageHeader(requ, response.getStatus(), "OK"));
 					System.out.println(prettyFormat(result));
 
 					this.writerXml.write(messageHeader(requ, 200, "OK"));
 					this.writerXml.write(prettyFormat(result));
 				} else {
-					messageHeader(requ, response.getStatus(), "NO CONTENT");
+					System.out.println(messageHeader(requ, response.getStatus(), "NO CONTENT"));
 					this.writerXml
 							.write(messageHeader(requ, 404, "NO CONTENT"));
 				}
@@ -968,8 +968,8 @@ public class ClientSide {
 			NodeList nodes2 = x
 					.getNodeListResult("healthMeasureHistories/measure/mid");
 			int numberOfHistoriesAfter = nodes2.getLength();
-			System.out.println("Length of hsitory after: "
-					+ numberOfHistoriesAfter);
+			//System.out.println("Length of hsitory after: "
+			//		+ numberOfHistoriesAfter);
 			// System.out.println(prettyFormat(result2));
 
 			String resStr = "";
@@ -1018,7 +1018,7 @@ public class ClientSide {
 				.accept(MediaType.APPLICATION_XML).get();
 
 		String result = responseGet.readEntity(String.class);
-		System.out.println(result);
+		//System.out.println(result);
 		
 		x.loadXML(result);
 		Node node = x.getNodeResult("healthMeasureHistories/"
@@ -1035,7 +1035,7 @@ public class ClientSide {
 				.put(Entity.xml(toPut));
 
 		int resultPut = responsePut.getStatus();
-		System.out.println("Put result: " + resultPut);
+		//System.out.println("Put result: " + resultPut);
 
 		String requGet = "#6 GET /person/" + first_person_id + "/"
 				+ measure_type
@@ -1050,7 +1050,7 @@ public class ClientSide {
 		x.loadXML(resultNew);
 		Node nodeNew = x.getNodeResult("healthMeasureHistories/measure/value");
 		String newValue = nodeNew.getTextContent();
-		System.out.println("New value: " + newValue);
+		//System.out.println("New value: " + newValue);
 
 		String resultOfRequest;
 		if (!oldValue.equals(newValue) && resultPut == 201) {
