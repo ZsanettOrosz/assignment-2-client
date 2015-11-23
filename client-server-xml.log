@@ -1,0 +1,378 @@
+
+		******** 3.1 ********
+#1 GET /person Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><people>
+  <person>
+    <idPerson>2</idPerson>
+    <firstname>hjjhsadhjadja</firstname>
+    <lastname>Franco</lastname>
+    <birthdate>1978-09-01T01:00:00+02:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile>
+      <lifeStatus>
+        <idMeasure>1</idMeasure>
+        <measureType>
+          <idMeasureDef>1</idMeasureDef>
+          <name>weight</name>
+        </measureType>
+        <value>72</value>
+      </lifeStatus>
+      <lifeStatus>
+        <idMeasure>4652</idMeasure>
+        <measureType>
+          <idMeasureDef>3</idMeasureDef>
+          <name>steps</name>
+        </measureType>
+        <value>94555</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+  <person>
+    <idPerson>3</idPerson>
+    <firstname>Padsfsppo</firstname>
+    <lastname>Pipsdfspo</lastname>
+    <healthProfile>
+      <lifeStatus>
+        <idMeasure>6</idMeasure>
+        <measureType>
+          <idMeasureDef>6</idMeasureDef>
+          <name>bmi</name>
+        </measureType>
+        <value>23</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+  <person>
+    <idPerson>5056</idPerson>
+    <firstname>MARAMAllOllllll</firstname>
+    <lastname>TuputHebggggggre</lastname>
+    <birthdate>1978-09-01T01:00:00+02:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile>
+      <lifeStatus>
+        <idMeasure>2</idMeasure>
+        <measureType>
+          <idMeasureDef>2</idMeasureDef>
+          <name>height</name>
+        </measureType>
+        <value>5</value>
+      </lifeStatus>
+      <lifeStatus>
+        <idMeasure>3</idMeasure>
+        <measureType>
+          <idMeasureDef>3</idMeasureDef>
+          <name>steps</name>
+        </measureType>
+        <value>900</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+  <person>
+    <idPerson>6955</idPerson>
+    <firstname>Padsfsppo</firstname>
+    <lastname>Pipsdfspo</lastname>
+    <healthProfile/>
+  </person>
+</people>
+
+		******** 3.2 ********
+#2 GET /person/2 Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>2</idPerson>
+  <firstname>hjjhsadhjadja</firstname>
+  <lastname>Franco</lastname>
+  <birthdate>1978-09-01T01:00:00+02:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <idMeasure>1</idMeasure>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>72</value>
+    </lifeStatus>
+    <lifeStatus>
+      <idMeasure>4652</idMeasure>
+      <measureType>
+        <idMeasureDef>3</idMeasureDef>
+        <name>steps</name>
+      </measureType>
+      <value>94555</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+		******** 3.3 ********
+#2 GET /person/2 Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>2</idPerson>
+  <firstname>hjjhsadhjadja</firstname>
+  <lastname>Franco</lastname>
+  <birthdate>1978-09-01T01:00:00+02:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <idMeasure>1</idMeasure>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>72</value>
+    </lifeStatus>
+    <lifeStatus>
+      <idMeasure>4652</idMeasure>
+      <measureType>
+        <idMeasureDef>3</idMeasureDef>
+        <name>steps</name>
+      </measureType>
+      <value>94555</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+#3 PUT /person/2 Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 201
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>2</idPerson>
+  <firstname>hjjhsadhjadja_XML</firstname>
+  <lastname>Franco</lastname>
+  <birthdate>1978-09-01T01:00:00+02:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <idMeasure>1</idMeasure>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>72</value>
+    </lifeStatus>
+    <lifeStatus>
+      <idMeasure>4652</idMeasure>
+      <measureType>
+        <idMeasureDef>3</idMeasureDef>
+        <name>steps</name>
+      </measureType>
+      <value>94555</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+		******** 3.4 ********
+#4 POST /person Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>7057</idPerson>
+  <firstname>whatnow</firstname>
+  <lastname>Chan</lastname>
+  <birthdate>1978-09-01T23:00:00+01:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <idMeasure>4704</idMeasure>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>72.3</value>
+    </lifeStatus>
+    <lifeStatus>
+      <idMeasure>4705</idMeasure>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>86</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+		******** 3.5 ********
+#5 DELETE /person/7057 Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 204
+
+#2 GET /person/2 Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 404
+
+		******** 3.6 ********
+#9 GET /measureTypes Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><measureTypes>
+  <measureType>weight</measureType>
+  <measureType>height</measureType>
+  <measureType>steps</measureType>
+  <measureType>blood pressure</measureType>
+  <measureType>heart rate</measureType>
+  <measureType>bmi</measureType>
+</measureTypes>
+
+		******** 3.7 ********
+#6 GET /person/2/weight Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories>
+  <measure>
+    <mid>3161</mid>
+    <created>2011-12-09</created>
+    <value>90</value>
+  </measure>
+  <measure>
+    <mid>3162</mid>
+    <created>2011-12-09</created>
+    <value>90</value>
+  </measure>
+  <measure>
+    <mid>3258</mid>
+    <created>2011-12-09</created>
+    <value>90</value>
+  </measure>
+  <measure>
+    <mid>3259</mid>
+    <created>2011-12-09</created>
+    <value>90</value>
+  </measure>
+</healthMeasureHistories>
+
+#6 GET /person/2/height Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/2/steps Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories>
+  <measure>
+    <mid>3208</mid>
+    <created>2011-12-09</created>
+    <value>94</value>
+  </measure>
+</healthMeasureHistories>
+
+#6 GET /person/2/blood pressure Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/2/heart rate Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/2/bmi Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/6955/weight Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/6955/height Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/6955/steps Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/6955/blood pressure Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/6955/heart rate Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+#6 GET /person/6955/bmi Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories/>
+
+		******** 3.8 ********
+#7 GET /person/2/steps/3208 Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories>
+  <measure>
+    <mid>3208</mid>
+    <created>2011-12-09</created>
+    <value>94</value>
+  </measure>
+</healthMeasureHistories>
+
+		******** 3.9 ********
+#6 GET /person/2/steps Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories>
+  <measure>
+    <mid>3208</mid>
+    <created>2011-12-09</created>
+    <value>94</value>
+  </measure>
+</healthMeasureHistories>
+
+#8 POST /person/2/steps Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><measure>
+  <mid>3260</mid>
+  <created>2011-12-09</created>
+  <value>94555</value>
+</measure>
+
+#6 GET /person/2/steps Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories>
+  <measure>
+    <mid>3208</mid>
+    <created>2011-12-09</created>
+    <value>94</value>
+  </measure>
+  <measure>
+    <mid>3260</mid>
+    <created>2011-12-09</created>
+    <value>94555</value>
+  </measure>
+</healthMeasureHistories>
+
+		******** 3.10 ********
+#10 PUT /person/2/steps/3208 Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 201
+
+#6 GET /person/2/steps Accept: APPLICATION/XML Content-Type: APPLICATION/XML
+=>Result: OK
+=>HTTP Status: 200
+<?xml version="1.0" encoding="UTF-8"?><healthMeasureHistories>
+  <measure>
+    <mid>3208</mid>
+    <created>2011-12-09</created>
+    <value>100</value>
+  </measure>
+</healthMeasureHistories>
